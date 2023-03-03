@@ -1,8 +1,19 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Button, View } from 'react-native';
+import { useAppDispatch } from '../store';
+import userSlice from '../store/userSlice';
 
 function Mypage() {
-  return <Text>Mypage</Text>;
+  const dispatch = useAppDispatch();
+
+  return (
+    <View>
+      <Button
+        title="unconnect"
+        onPress={() => dispatch(userSlice.actions.setUser({ address: '', token: 0 }))}
+      />
+    </View>
+  );
 }
 
 export default Mypage;

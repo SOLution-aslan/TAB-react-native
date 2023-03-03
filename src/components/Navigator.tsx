@@ -13,7 +13,6 @@ const Tab = createMaterialBottomTabNavigator();
 
 function Navigator() {
   const isLoggedIn = useAppSelector((state) => state.user.address);
-  console.log(isLoggedIn);
 
   return (
     <NavigationContainer>
