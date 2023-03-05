@@ -6,7 +6,7 @@ import { useAppSelector } from '../store';
 import Home from '../pages/Home';
 import Mypage from '../pages/Mypage';
 import Shop from '../pages/Shop';
-import Start from '../pages/Start';
+import Mining from '../pages/Mining';
 
 const Stack = createNativeStackNavigator();
 const Tab = createMaterialBottomTabNavigator();
@@ -26,7 +26,7 @@ function Navigator() {
           inactiveColor="black"
           barStyle={{ backgroundColor: 'green' }}
         >
-          <Tab.Screen name="Start" component={Start} />
+          <Tab.Screen name="Mining" component={Mining} />
           <Tab.Screen name="Shop" component={Shop} />
           <Tab.Screen name="Mypage" component={Mypage} />
         </Tab.Navigator>
