@@ -24,7 +24,7 @@ function Navigator() {
         <Tab.Navigator
           activeColor="#f0edf6"
           inactiveColor="black"
-          barStyle={{ backgroundColor: '#694fad' }}
+          barStyle={{ backgroundColor: 'green' }}
         >
           <Tab.Screen name="Start" component={Start} />
           <Tab.Screen name="Shop" component={Shop} />
