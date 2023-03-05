@@ -6,22 +6,24 @@ import userSlice from '../store/userSlice';
 function Home() {
   const dispatch = useAppDispatch();
 
+  const onPressConnect = () => {
+    dispatch(
+      userSlice.actions.setUser({
+        address: 'H7fHSBqTT7mRPZkEaqc91pzcxX4io6ZByifa31goqdH5',
+        token: 100,
+      }),
+    );
+  };
+
   return (
-    <View style={{ display: 'flex', height: '100%' }}>
+    <View style={{ height: '100%' }}>
       <Image style={styles.imgContainer} source={require('../assets/img/pullup.png')} />
       <View style={styles.buttonContainer}>
-        <Pressable
-          style={styles.button}
-          // TODO: 계정연결 로직 추가필요
-          onPress={() => dispatch(userSlice.actions.setUser({ address: '123123', token: 100 }))}
-        >
+        {/* TODO: 계정연결 로직 추가필요 */}
+        <Pressable style={styles.button} onPress={onPressConnect}>
           <Text style={styles.buttonText}>continue with seedvault</Text>
         </Pressable>
-        <Pressable
-          style={styles.button}
-          // TODO: 계정연결 로직 추가필요
-          onPress={() => dispatch(userSlice.actions.setUser({ address: '123123', token: 100 }))}
-        >
+        <Pressable style={styles.button} onPress={onPressConnect}>
           <Text style={styles.buttonText}>continue with phantom</Text>
         </Pressable>
       </View>

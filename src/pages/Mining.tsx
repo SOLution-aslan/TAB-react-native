@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Text, View, StyleSheet, Pressable, Alert, TouchableOpacity } from 'react-native';
 
-export type Exercise = 'pullup' | 'pushup';
+export type Activity = 'pullup' | 'pushup';
 
 function Mining() {
-  const [selected, setSelected] = useState<Exercise>('pullup');
+  const [selected, setSelected] = useState<Activity>('pullup');
 
   return (
     <View style={{ height: '100%' }}>
