@@ -3,8 +3,9 @@ import { View, Text, StyleSheet, Pressable, ScrollView } from 'react-native';
 import { useAppDispatch, useAppSelector } from '../store';
 import userSlice from '../store/userSlice';
 import { Activity } from './Mining';
+import HistoryItem from '../components/HistoryItem';
 
-interface ActivityHistory {
+export interface ActivityHistory {
   id: string;
   activity: Activity;
   date: number;
@@ -48,18 +49,8 @@ function Mypage() {
       </View>
       <View style={{ marginBottom: 50 }}>
         <Text style={styles.title}>Activity History</Text>
-        {mockHistoryData.map((data) => {
-          return (
-            <View key={data.id} style={styles.historyItem}>
-              <Text style={{ ...styles.historyText, flex: 3 }}>{data.date}</Text>
-              <Text style={{ ...styles.historyText, flex: 2, textAlign: 'center' }}>
-                {data.activity}
-              </Text>
-              <Text style={{ ...styles.historyText, flex: 2, textAlign: 'right' }}>
-                {data.count} 개
-              </Text>
-            </View>
-          );
+        {mockHistoryData.map((item) => {
+          return <HistoryItem key={item.id} data={item} />;
         })}
       </View>
     </ScrollView>
@@ -83,19 +74,6 @@ const styles = StyleSheet.create({
   buttonText: {
     color: 'white',
     textTransform: 'uppercase',
-  },
-  historyItem: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    backgroundColor: 'gray',
-    marginBottom: 5,
-    borderRadius: 10,
-    paddingVertical: 6,
-    paddingHorizontal: 8,
-  },
-  historyText: {
-    fontSize: 16,
-    color: 'white',
   },
 });
 

@@ -8,14 +8,7 @@ function Mining() {
 
   return (
     <View style={{ height: '100%' }}>
-      <View
-        style={{
-          flex: 5,
-          paddingHorizontal: 20,
-          paddingTop: 20,
-          gap: 20,
-        }}
-      >
+      <View style={styles.selectBoxContainer}>
         <TouchableOpacity
           style={{
             ...styles.selectBox,
